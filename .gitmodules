@@ -1,0 +1,3 @@
+[submodule "Zebra_cURL"]
+	path = Zebra_cURL
+	url = https://github.com/stefangabos/Zebra_cURL.git
