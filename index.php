@@ -35,11 +35,11 @@ function fetchReadings( $references = array() ) {
 
 	$curl = new Zebra_cURL();
 
-	$curl->cache('cache', 86400);
+	//$curl->cache('cache', 86400);
 
 	$curl->post(array(
 	    'http://www.ewtn.com/se/readings/readingsservice.svc/books' => '{"References":["1 Thessalonians 4:9-11","Psalms 98:1, 7-9","Matthew 25:14-30"],"Language":"en"}'
-	), 'readingCallback');
+	), 'readingCallback', array(CURLOPT_HTTPHEADER => 'Content-Type:application/json'));
 }
 
 function readingCallback ( $response ) {
